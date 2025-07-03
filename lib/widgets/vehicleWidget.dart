@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class VehicleWidget extends StatelessWidget {
   final String name;
-  final String mark;
+  final String brand;
   final int age;
   final int KM;
   final double price;
@@ -14,7 +14,7 @@ class VehicleWidget extends StatelessWidget {
   const VehicleWidget({
     Key? key,
     required this.name,
-    required this.mark,
+    required this.brand,
     required this.age,
     required this.KM,
     required this.price,
@@ -58,7 +58,7 @@ class VehicleWidget extends StatelessWidget {
                 children: [
                   // Nome e marca do produto
                   Text(
-                    '$mark $name',
+                    '$brand $name',
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -78,7 +78,7 @@ class VehicleWidget extends StatelessWidget {
                     style: TextStyle(fontSize: 14, color: Colors.grey[600]),
                     children: [
                       WidgetSpan(child: Icon(Icons.calendar_month, size: 16, color: Colors.grey[600]),),
-                      TextSpan(text: age.toString()),
+                      TextSpan(text: age.toString() + " "),
                       WidgetSpan(child: Icon(Icons.speed, size: 16, color: Colors.grey[600],)),
                       TextSpan(text: KM.toString()),
                     ],

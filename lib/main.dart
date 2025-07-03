@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'widgets/vehicleWidget.dart';
-
+import 'screens/home_screen.dart';
 
 void main() {
   runApp(const AppFinance());
@@ -12,74 +11,29 @@ class AppFinance extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'Financiamento de Veículos',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.red,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
-      ),
-      home: const MyHomePage(title: 'Financiamento de Veículos'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            VehicleWidget(
-              name: 'Veículo 1',
-              mark: 'HYUNDAI',
-              age: 2020,
-              KM: 100000,
-              price: 100000,
-              description: 'Descrição do veículo 1',
-              category: 'Categoria 1',
-              imageUrl: 'https://via.placeholder.com/150',
-              onTap: () {},
-            ),
-            VehicleWidget(
-              name: 'Veículo 2',
-              mark: 'FIAT',
-              age: 2025,
-              KM: 15400,
-              price: 200000,
-              description: 'Descrição do veículo 2',
-              category: 'Categoria 2',
-              imageUrl: 'https://via.placeholder.com/150',
-              onTap: () {},
-            ),
-            VehicleWidget(
-              name: 'Veículo 3',          
-              mark: 'VOLVO',
-              age: 2025,
-              KM: 25000,
-              price: 300000,
-              description: 'Descrição do veículo 3',
-              category: 'Categoria 3',
-              imageUrl: 'https://via.placeholder.com/150',
-              onTap: () {},
-            ),
-          ],
+        primarySwatch: Colors.deepOrange,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepOrange,
+          primary: Colors.deepOrange,
+        ),
+        useMaterial3: true,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.deepOrange,
+          foregroundColor: Colors.white,
+          elevation: 2,
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.deepOrange,
+            foregroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+          ),
         ),
       ),
+      home: const HomeScreen(),
     );
   }
 }
