@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// Abstract base class for all vehicle widgets
+// Classe base abstrata para todos os widgets de veículos
 abstract class VehicleWidget extends StatelessWidget {
   final String name;
   final double price;
@@ -17,7 +17,7 @@ abstract class VehicleWidget extends StatelessWidget {
     required this.onTap,
   });
 
-  // Abstract method that must be implemented by child classes
+  // Método abstrato que deve ser implementado por classes filhas
   Widget buildSpecificInfo();
 
   @override
@@ -34,7 +34,7 @@ abstract class VehicleWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Vehicle image with rounded corners
+            // Imagem do veículo com cantos arredondados
             ClipRRect(
               borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
               child: Image.network(
@@ -62,7 +62,7 @@ abstract class VehicleWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Vehicle name in bold
+                  // Nome do veículo em negrito
                   Text(
                     name,
                     style: const TextStyle(
@@ -72,7 +72,7 @@ abstract class VehicleWidget extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  // Vehicle description
+                  // Descrição do veículo
                   Text(
                     description,
                     style: TextStyle(
@@ -81,10 +81,10 @@ abstract class VehicleWidget extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 12),
-                  // Specific information for vehicle type
+                  // Informações específicas para o tipo de veículo
                   buildSpecificInfo(),
                   const SizedBox(height: 12),
-                  // Price highlighted
+                  // Preço destacado
                   Text(
                     'R\$ ${price.toStringAsFixed(2).replaceAll('.', ',')}',
                     style: const TextStyle(

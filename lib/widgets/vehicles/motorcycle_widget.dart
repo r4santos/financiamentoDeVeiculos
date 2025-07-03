@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'vehicle_widget.dart';
 
-// INHERITANCE: MotorcycleWidget inherits from VehicleWidget to reuse the base structure
+// MotorcycleWidget herda de VehicleWidget para reutilizar a estrutura base
 class MotorcycleWidget extends VehicleWidget {
   final int displacement;
   final String style;

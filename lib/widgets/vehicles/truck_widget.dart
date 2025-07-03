@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'vehicle_widget.dart';
 
-// INHERITANCE: TruckWidget inherits from VehicleWidget to reuse the base structure
+// TruckWidget herda de VehicleWidget para reutilizar a estrutura base
 class TruckWidget extends VehicleWidget {
   final int axles;
   final double loadCapacity;
