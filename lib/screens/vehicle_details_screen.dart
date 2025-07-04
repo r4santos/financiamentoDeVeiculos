@@ -127,12 +127,14 @@ class _VehicleDetailsScreenState extends State<VehicleDetailsScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Imagem
-            ClipRRect(
+            Align(
+              alignment: Alignment.center,
+              child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: Image.network(
                 widget.vehicle.imageUrl,
-                height: 250,
-                width: double.infinity,
+                height: 450,
+                
                 fit: BoxFit.cover,
                 errorBuilder: (context, error, stackTrace) {
                   return Container(
@@ -149,7 +151,7 @@ class _VehicleDetailsScreenState extends State<VehicleDetailsScreen> {
                 },
               ),
             ),
-            const SizedBox(height: 20),
+            ),
             
             // Nome do veículo
             Text(

@@ -33,8 +33,8 @@ class HomeScreen extends StatelessWidget {
       price: 850000.00,
       description: 'Globetrotter 6x4 I-Shift',
       imageUrl:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLAdD-CYgft9mAoBIqS6_dwYJgI00HbZStnA&s',
-      axles: 6,
+          'https://dnge9sb91helb.cloudfront.net/imagetilewm/product/52abccd0/volvo-fh540-tridem,3dc3be87.jpg',
+      axles: 8,
       loadCapacity: 48.5,
     ),
     Car(
@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
       price: 92990.00,
       description: '1.3 Firefly Flex Drive S-Design',
       imageUrl:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7RWGTjOafu2zKIFfcQBHA8Np-6NlURzyPUFsFpexDJamLv1MhMVrgGVftvFsMA5fG-C4&usqp=CAU',
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Fiat_Cronos_1.8_16V_E.Torq_Precision.jpg/960px-Fiat_Cronos_1.8_16V_E.Torq_Precision.jpg',
       doors: 4,
       transmission: 'Manual',
     ),
@@ -64,9 +64,16 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Veículos para Financiamento'),
         centerTitle: true,
       ),
-      body: ListView.builder(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
-        itemCount: _vehicles.length,
+      body: GridView.builder(
+      // É uma boa prática usar GridView.builder para listas, pois ele constrói os itens sob demanda.
+      padding: const EdgeInsets.all(8.0), // Padding em todas as direções
+      itemCount: _vehicles.length, // <-- PONTO CHAVE: Informa a quantidade de itens
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 4,         // Exibe 4 colunas.
+        crossAxisSpacing: 8.0,     // Espaçamento horizontal entre os itens
+        mainAxisSpacing: 8.0,      // Espaçamento vertical entre os itens
+        childAspectRatio: 1.2,     // Ajusta a proporção (largura / altura). Experimente valores diferentes.
+      ),
         itemBuilder: (context, index) {
           final vehicle = _vehicles[index];
 
